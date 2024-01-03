@@ -2,5 +2,5 @@
 ## alterações feitas
 * Verificação de e-mail por consulta sql
 
-### Este é um projeto originado de Celke
 
+### Um projeto originado por - [Celke PHP](https://celke.com.br)
