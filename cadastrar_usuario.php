@@ -14,7 +14,8 @@ if (isset($dados['cadUsuario'])) {
 
         // Preparar a QUERY
         $ver_email = $conn->prepare($query_email);
-
+        
+        // Substituir os links pelos valores do formulário
         $ver_email->bindParam(':email', $dados['email']);
 
         // Executar a QUERY
@@ -22,9 +23,17 @@ if (isset($dados['cadUsuario'])) {
 
 
         // Verificar se cadastrou no banco de dados
+
+        // Verifica se já existe o e-mail cadastrado
         if ($ver_email->rowCount()) {
+            
+            // Se sim
             $mensagem = "<div class='alert-danger'>Erro: e-mail já cadastrado!</div>";
+        
         } else {
+
+            // Se não
+
             // Criar a QUERY cadastrar no banco de dados
             $query_usuario = "INSERT INTO usuarios (nome, email) VALUES (:nome, :email)";
 
